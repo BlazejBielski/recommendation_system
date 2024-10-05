@@ -29,4 +29,6 @@ def fetch_and_unpack_files_from_url(url, source_name=None, base_dir='data/raw'):
 
     print(f'Data from {url} has been successfully loaded to {extract_to}')
 
+    os.remove(zip_path)
+
     return extract_to

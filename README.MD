@@ -3,7 +3,7 @@
 ## Data set:
 Get data set from MovieLans:
 ```bash
-cd data
+cd ./data/raw
 wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
 unzip ml-latest-small.zip
 ```
