@@ -14,8 +14,11 @@ def fetch_and_unpack_files_from_url(url, source_name=None, base_dir='data/raw'):
 
     extract_to = os.path.join(base_dir, source_name)
 
-    if not os.path.exists(extract_to):
-        os.makedirs(extract_to)
+    if os.path.exists(extract_to):
+        import shutil
+        shutil.rmtree(extract_to)
+
+    os.makedirs(extract_to)
 
     zip_path = os.path.join(extract_to, zip_filename)
     print(f'Load data from {url} to {zip_path}')
@@ -27,8 +30,8 @@ def fetch_and_unpack_files_from_url(url, source_name=None, base_dir='data/raw'):
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
 
-    print(f'Data from {url} has been successfully loaded to {extract_to}')
-
     os.remove(zip_path)
+
+    print(f'Data from {url} has been successfully loaded to {extract_to}')
 
     return extract_to
