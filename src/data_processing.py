@@ -53,7 +53,6 @@ def save_processed_data(data, filename):
 
 def ensure_data_availability():
     """Sprawdza, czy dane zostały już przetworzone, jeśli nie, przetwarza je."""
-    print("Zawsze ściągamy i przetwarzamy dane od nowa...")
 
     # Ładujemy dane z oryginalnego źródła
     ratings, movies, tags, links = load_data()

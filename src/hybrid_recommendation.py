@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class HybridRecommendation:
     def __init__(self, content_based_model, collaborative_model, w_cb=0.5, w_cf=0.5):
         self.content_based_model = content_based_model

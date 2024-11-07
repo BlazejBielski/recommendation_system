@@ -1,6 +1,6 @@
-from src.collaborative_filtering import CollaborativeFiltering
-from src.content_based_filtering import ContentBasedFiltering
-from src.hybrid_recommendation import HybridRecommendation
+from collaborative_filtering import CollaborativeFiltering
+from content_based_filtering import ContentBasedFiltering
+from hybrid_recommendation import HybridRecommendation
 from data_processing import ensure_data_availability, load_data
 
 def main():
@@ -11,10 +11,12 @@ def main():
     print("Uruchamianie modelu Content-Based Filtering...")
     content_based_model = ContentBasedFiltering(ratings, movies)
 
-    # Przetwarzanie cech filmów
-    processed_movies = content_based_model.preprocess_movie_features()
+    # Przetwarzanie cech filmów (jeśli jest potrzebne)
+    content_based_model.preprocess_movie_features()
+
     # Łączenie ocen użytkowników z cechami filmów
     user_movie_data = content_based_model.prepare_user_movie_data()
+
     # Trenowanie modelu
     trained_model = content_based_model.train_model(user_movie_data)
 
@@ -44,5 +46,5 @@ def main():
     print(hybrid_recommendations)
 
 if __name__ == '__main__':
-    ensure_data_availability()  # Zapewnienie dostępności danych przed uruchomieniem modelu
+    ensure_data_availability()
     main()
