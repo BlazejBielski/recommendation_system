@@ -1,15 +1,17 @@
 # Recommendation system
 
-## Data set:
-Get data set from MovieLans:
-```bash
-cd ./data/raw
-wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
-unzip ml-latest-small.zip
-```
-Note:
-if you don't have unzip installed, install it using:
+## Instruction
 
-```bash
-sudo apt-get install unzip
-```
+1. Clone the repository
+2. Make virtual environment
+    ```bash
+    python -m venv venv
+    ```
+3. Install the requirements
+    ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the application
+    ```bash
+   python main.py
+   ```
