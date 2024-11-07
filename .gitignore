@@ -5,5 +5,4 @@ venv
 
 **/*.pyc
 
-data/raw
-data/processed
+src/data
