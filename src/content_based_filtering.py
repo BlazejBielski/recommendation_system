@@ -73,7 +73,7 @@ class ContentBasedFiltering:
         features = unrated_movies.drop(columns=['title', 'movieId'])
 
         # Przewidujemy prawdopodobieństwo, że użytkownik polubi każdy z nieocenionych filmów
-        predicted_scores = self.model.predict_proba(features)[:, 1]  # Druga kolumna to prawdopodobieństwo klasy "1" (lubi)
+        predicted_scores = self.model.predict_proba(features)[:, 1]
 
         # Tworzymy DataFrame z wynikami
         recommendations = unrated_movies[['movieId']].copy()
